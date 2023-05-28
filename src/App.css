@@ -1,38 +1,292 @@
-.App {
-  text-align: center;
+/* Global styles */
+html {
+  /* Pale green background color */
+  background-color: #e8f5e9;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Common styles for the navbar */
+header {
+  background-color: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Desktop breakpoint */
+@media (min-width: 992px) {
+  nav {
+    margin-left: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Tablet and Mobile breakpoint */
+@media (max-width: 991px) {
+  header {
+    flex-direction: column;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+main {
+  padding-top: 82px;
+}
+
+/* Main styles */
+#promo-banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50vh;
+  color: #fff;
+  text-align: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+#promo-banner h1, #promo-banner p, #promo-banner .button {
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#promo-banner h1 {
+  font-size: 3rem;
+  margin: 0;
+  margin-top: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#promo-banner p {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#promo-banner .button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+#promo-banner .button:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* promo-banner img */
+#promo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  /* dark filter for an img */
+  filter: brightness(25%);
+}
+
+#food-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 2rem;
+}
+
+article {
+  width: 30%;
+  text-align: center;
+}
+
+article img {
+  width: 100%;
+  border-radius: 4px;
+  /* make square */
+  height: 200px;
+  object-fit: cover;
+}
+
+article h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  /* vertical and horizontal center alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge with the class .badge inside article h2 */
+article h2 .badge {
+  background-color: #f44336;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+}
+
+article p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+article .button {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Footer styles */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.left-col img {
+  height: 30px;
+}
+
+.right-col p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* form */
+.reservation-form {
+  padding: 2rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.reservation-form > div {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling for select dropdowns */
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Styling for checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Styling for form labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styling for form submission button */
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* content body */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Desktop breakpoint */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
   }
 }
